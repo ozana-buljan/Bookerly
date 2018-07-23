@@ -93,9 +93,9 @@ To simplify the development process, we've been provided with a backend server t
 ## The looks
 The basic look for the app was already provided. However, I've done some (minimal) redesign. Check it out!
 
-![Bookerly UI Desktop]()
+![Bookerly UI Desktop](https://raw.githubusercontent.com/ozana-buljan/Bookerly/master/public/Bookerly-UI-Desktop.png)
 
-![Bookerly UI Mobile]()
+![Bookerly UI Mobile](https://raw.githubusercontent.com/ozana-buljan/Bookerly/master/public/Bookerly-UI-Mobile.png)
 
 ## ToDo
 Simple ones that should enhance UX:
