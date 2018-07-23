@@ -85,7 +85,7 @@ img {
 /*PARALLAX*/
 
 .parallax {
-    background-image: url('http://res.cloudinary.com/duc8x03hq/image/upload/v1532350336/landing-hero-mobile_psfg68.jpg');
+    background-image: url('../Assets/landing-hero-mobile.jpg');
     height: 30vh;
     background-attachment: fixed;
 
@@ -374,7 +374,7 @@ footer > section > p > a {
 
 @media (min-width: 768px) {
     .parallax {
-        background-image: url('http://res.cloudinary.com/duc8x03hq/image/upload/v1532350021/landing-hero_kzis3k.jpg');
+        background-image: url('../Assets/landing-hero.jpg');
         height: 70vh;
         background-attachment: fixed;
         background-position: center;

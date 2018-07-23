@@ -6,6 +6,8 @@ import PropTypes from "prop-types";
 
 import Book from "./Book";
 
+import Logo from "../Assets/logo.png";
+
 class Shelf extends Component {
   static propTypes = {
     books: PropTypes.array.isRequired,
@@ -22,7 +24,7 @@ class Shelf extends Component {
             <a href="/">
               <img
                 src={
-                  "http://res.cloudinary.com/duc8x03hq/image/upload/v1532356177/logo_efps7r.png"
+                  Logo
                 }
                 alt="logo"
                 className="logo-img"
