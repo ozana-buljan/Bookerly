@@ -25,8 +25,8 @@ Visit:
 
 * Check out the app!
 
-
-## File structure
+## App Details
+### File structure
 
 As  previously stated, the point was to practice React, while still creating something fun and useful(-ish?). Well, we were provided with the starter template with a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. Our job was to add interactivity to the app by refactoring the static code in the template. I changed the file structure a bit (to make it less all over the place).
 
@@ -67,7 +67,7 @@ BOOKERLY
     └── index.js # This file is used for DOM rendering only.
 ```
 
-## App Functionality
+### App Functionality
 
 * In this application, the main page displays a list of "shelves" (i.e. categories), each of which contains a number of books:
     - Currently Reading
@@ -86,11 +86,11 @@ BOOKERLY
 
 * When navigating back to the main page from the search page, user instantly sees all of the selections they made on the search page in the library.
 
-## Backend Server NB
+### Backend Server NB
 
 To simplify the development process, we've been provided with a backend server to develop against. The backend API uses a fixed set of cached search results and is limited to a particular set of search terms, which can be found in [SEARCH_TERMS.md](SEARCH_TERMS.md). That list of terms are the _only_ terms that will work with the backend!
 
-## The looks
+### The looks
 The basic look for the app was already provided. However, I've done some (minimal) redesign. Check it out!
 
 ![Bookerly UI Desktop](https://raw.githubusercontent.com/ozana-buljan/Bookerly/master/public/Bookerly-UI-Desktop.png)
