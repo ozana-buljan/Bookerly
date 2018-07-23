@@ -95,13 +95,7 @@ img {
 
 /*BOOKSHELVES*/
 
-.bookshelf {}
 
-@media (min-width: 600px) {
-    .bookshelf {
-        padding: 0 20px 40px;
-    }
-}
 
 .bookshelf-title {
 
@@ -372,6 +366,8 @@ footer > section > p > a {
     font-weight: 700;
 }
 
+/* *** *** *** *** Media Queries*** *** *** *** */
+/* Tablet & Desktop */
 @media (min-width: 768px) {
     .parallax {
         background-image: url('../Assets/landing-hero.jpg');
@@ -380,6 +376,9 @@ footer > section > p > a {
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
+    }
+    .bookshelf {
+        padding: 0 20px 40px;
     }
     .books-grid {
         grid-template-columns: repeat(2, 1fr);

@@ -1,26 +1,27 @@
-// react
+/* *** *** REACT *** *** */
 import React, {Component} from 'react'
 import {Route} from 'react-router-dom'
 
-// api
+/* *** *** API *** *** */
 import * as BooksAPI from './utils/BooksAPI'
 
-// components
+/* *** *** COMPONENTS *** *** */
 import Shelf from './components/Shelf'
 import Search from './components/Search'
 import Preview from './components/Preview'
 import Parallax from './components/Parallax.js'
 import Footer from './components/Footer'
 
-// styles
+/* *** *** STYLES *** *** */
 import './styles/App.css'
 
+/* *** *** App Component *** *** */
+
 /**
- * @description
+ * @description App -> contains all components, handles routing and renders the views
  */
 class App extends Component {
-    /**
-     *
+    /*
      * @type {{books: Array}}
      */
     state = {
@@ -28,8 +29,8 @@ class App extends Component {
         books: []
     }
 
-    /**
-     * @description sets the books state after the components are rendered
+    /*
+     * @description -> after the components are rendered, set the book state
      */
     componentDidMount() {
         BooksAPI
@@ -41,8 +42,8 @@ class App extends Component {
             })
     }
 
-    /**
-     * @description handles moving a book from one shelf to an other shelf
+    /*
+     * @description updateBookHandler -> handles how to move a book from one shelf to another
      * @param book
      * @param shelf
      */
@@ -67,8 +68,8 @@ class App extends Component {
             })
     }
 
-    /**
-     * @description passes the book information to the review component
+    /*
+     * @description previewBookHandler -> passes information about the book to the review component
      * @param book
      */
     previewBookHandler = (book) => {
@@ -82,8 +83,8 @@ class App extends Component {
             })
     }
 
-    /**
-     * @description clear localStorage when navigating aways from preview
+    /*
+     * @description clearStorageHandler -> clear localStorage when navigating away from preview
      */
     clearStorageHandler = () => {
         localStorage.clear()
@@ -96,8 +97,8 @@ class App extends Component {
         this.setState({book: []})
     }
 
-    /**
-     * @description renders the app and handles routing
+    /*
+     * @description render() -> renders the app and handles routing
      * @returns {*}
      */
     render() {
@@ -141,5 +142,6 @@ class App extends Component {
     </div>)
     }
 }
+
 
 export default App

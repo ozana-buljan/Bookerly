@@ -16,6 +16,29 @@ const Book = props => {
 
   const shelfs = ["currentlyReading", "wantToRead", "read", "none"];
 
+    /*
+    *@description showAuthors()-> checks if there are multiple authors and adds space
+    */
+  let showAuthors = () => {
+    if (book.authors) {
+      let length = book.authors.length
+      let lastAuthor = book.authors[length-1]
+      let authors = book.authors.map((author) => {
+        if (author === lastAuthor) {
+          return author
+        }
+        else {
+          // Seperate authors by comma
+          return author + ", "
+        }
+      })
+      return authors
+    }
+    else {
+      // if there are no authors, return Unknown
+      return "Unknown"
+    }
+  }
   return (
     <div className="book" id={id} key={id}>
       <div className="book-top">
@@ -57,7 +80,7 @@ const Book = props => {
       <div className="book-title">
         <h2> {title} </h2>
       </div>
-      <div className="book-authors"> {authors} </div>
+      <div className="book-authors"> {showAuthors()} </div>
     </div>
   );
 };
