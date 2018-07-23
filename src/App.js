@@ -1,10 +1,6 @@
 // react
-import React, {
-    Component
-} from 'react'
-import {
-    Route
-} from 'react-router-dom'
+import React, {Component} from 'react'
+import {Route} from 'react-router-dom'
 
 // api
 import * as BooksAPI from './utils/BooksAPI'
@@ -13,7 +9,9 @@ import * as BooksAPI from './utils/BooksAPI'
 import Shelf from './components/Shelf'
 import Search from './components/Search'
 import Preview from './components/Preview'
-import Prx from './components/Parallax'
+import Parallax from './components/Parallax.js'
+import Footer from './components/Footer'
+
 // styles
 import './styles/App.css'
 
@@ -26,23 +24,21 @@ class App extends Component {
      * @type {{books: Array}}
      */
     state = {
-        books: [],
-        book: JSON.parse(localStorage.getItem('preview')) || []
+        book : JSON.parse(localStorage.getItem('preview')) || [],
+        books: []
     }
 
     /**
      * @description sets the books state after the components are rendered
      */
     componentDidMount() {
-        BooksAPI.getAll().then(
-            (books) => {
+        BooksAPI
+            .getAll()
+            .then((books) => {
                 this.setState({
-                    books: books.filter((book) => (
-                        book.shelf && book.shelf !== "none"
-                    ))
+                    books: books.filter((book) => (book.shelf && book.shelf !== "none"))
                 })
-            }
-        )
+            })
     }
 
     /**
@@ -51,17 +47,24 @@ class App extends Component {
      * @param shelf
      */
     updateBookHandler = (book, shelf) => {
-        BooksAPI.update(book, shelf).then(() => {
-            // add shelf to book
-            book.shelf = shelf
+        BooksAPI
+            .update(book, shelf)
+            .then(() => {
+                // add shelf to book
+                book.shelf = shelf
 
-            // set state
-            this.setState((state) => ({
-                books: state.books.filter((b) => (
-                    b.id !== book.id
-                )).concat(shelf !== "none" ? [book] : [])
-            }))
-        })
+                // set state
+                this.setState((state) => ({
+                    books: state
+                        .books
+                        .filter((b) => (b.id !== book.id))
+                        .concat(
+                            shelf !== "none"
+                                ? [book]
+                                : []
+                        )
+                }))
+            })
     }
 
     /**
@@ -69,12 +72,14 @@ class App extends Component {
      * @param book
      */
     previewBookHandler = (book) => {
-        BooksAPI.get(book).then(res => {
-            this.setState({
-                book: res
-            }, () => localStorage.setItem('preview', JSON.stringify(res)))
-            console.log(this.state.book)
-        })
+        BooksAPI
+            .get(book)
+            .then(res => {
+                this.setState({
+                    book: res
+                }, () => localStorage.setItem('preview', JSON.stringify(res)))
+                console.log(this.state.book)
+            })
     }
 
     /**
@@ -88,9 +93,7 @@ class App extends Component {
      * @description clear the book state
      */
     clearStateHandler = () => {
-        this.setState({
-            book: []
-        })
+        this.setState({book: []})
     }
 
     /**
@@ -98,67 +101,44 @@ class App extends Component {
      * @returns {*}
      */
     render() {
-        return ( <
-            div className = "app" >
-            <
-            Route exact path = "/"
-            render = {
-                () => ( <
-                    Shelf books = {
-                        this.state.books
-                    }
-                    onUpdateBook = {
-                        this.updateBookHandler
-                    }
-                    preview = {
-                        this.previewBookHandler
-                    }
-                    />
-                )
+        return (< div className = "app" > <Route exact path = "/" render = {
+            () => (
+                <div>
+                    <Parallax/>
+                    <Shelf
+                        books={this.state.books
+}
+                        onUpdateBook={this.updateBookHandler
+}
+                        preview={this.previewBookHandler
+}/>
+                </div>
+            )
+        } /> <Route path = "/search" render = {
+            () => (< Search books = {
+                this.state.books
             }
-            />
-
-            <
-            Route path = "/search"
-            render = {
-                () => ( <
-                    Search books = {
-                        this.state.books
-                    }
-                    onUpdateBook = {
-                        this.updateBookHandler
-                    }
-                    preview = {
-                        this.previewBookHandler
-                    }
-                    />
-                )
+            onUpdateBook = {
+                this.updateBookHandler
             }
-            />
-
-            <
-            Route path = "/preview"
-            render = {
-                () => ( <
-                    Preview book = {
-                        this.state.book
-                    }
-                    onUpdateBook = {
-                        this.updateBookHandler
-                    }
-                    clearStorage = {
-                        this.clearStorageHandler
-                    }
-                    clearState = {
-                        this.clearStateHandler
-                    }
-                    />
-                )
+            preview = {
+                this.previewBookHandler
+            } />)
+        } /> <Route path = "/preview" render = {
+            () => (< Preview book = {
+                this.state.book
             }
-            /> < /
-            div >
-
-        )
+            onUpdateBook = {
+                this.updateBookHandler
+            }
+            clearStorage = {
+                this.clearStorageHandler
+            }
+            clearState = {
+                this.clearStateHandler
+            } />)
+        } /> <Footer/>
+    </div>)
     }
 }
 
