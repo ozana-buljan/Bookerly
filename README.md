@@ -11,9 +11,6 @@ In all seriousnes, though, the point of this app was for me to practice my React
 
 ## Running instructions
 
-### Web live
-Visit:
-
 ### Run locally
 *   Download the repository: click download ZIP on the right of the screen and extract the zip file to your computer or clone the repository using Git.
 *   Navigate to where you unzipped the file or cloned the repository.
@@ -24,6 +21,9 @@ Visit:
 * With your server running, in your browser, navigate to the site: `http://localhost:3000`
 
 * Check out the app!
+
+### Web live: Coming soon
+None yet. Working on putting it on Git Pages. (It's just wee bit more complicated than usual.)
 
 ## App Details
 ### File structure
@@ -60,10 +60,11 @@ BOOKERLY
     ├── App.test.js # Used for testing. Provided with Create React App.
     ├── Utils
     │     └── BooksAPI.js # A JavaScript API for the provided Udacity backend.
-    ├── icons # images for the app
+    ├── icons # icon images for the app
     │     ├── add.svg
     │     ├── arrow-back.svg
     │     └── arrow-drop-down.svg
+    ├── Assets # images for the app
     └── index.js # This file is used for DOM rendering only.
 ```
 
