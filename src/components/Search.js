@@ -1,8 +1,9 @@
+/* *** *** IMPORT*** *** */
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Book from './Book'
 import * as BooksAPI from '../utils/BooksAPI'
-
+/* *** *** Search Component *** *** */
 class Search extends Component {
 
     state = {
@@ -77,5 +78,5 @@ class Search extends Component {
         )
     }
 }
-
+/* *** *** EXPORT*** *** */
 export default Search

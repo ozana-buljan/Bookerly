@@ -1,7 +1,8 @@
+/* *** *** IMPORT*** *** */
 import React from "react";
-
 import { Link } from "react-router-dom";
 
+/* *** *** Preview Component *** *** */
 const Preview = props => {
   const { book, clearStorage, clearState, onUpdateBook } = props;
 
@@ -89,5 +90,5 @@ const Preview = props => {
     </div>
   );
 };
-
+/* *** *** EXPORT*** *** */
 export default Preview;

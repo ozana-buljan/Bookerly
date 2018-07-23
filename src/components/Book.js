@@ -1,9 +1,9 @@
+/* *** *** IMPORT*** *** */
 import React from "react";
-
 import PropTypes from "prop-types";
-
 import { Link } from "react-router-dom";
 
+/* *** *** Book Component *** *** */
 const Book = props => {
   Book.propTypes = {
     book: PropTypes.object.isRequired,
@@ -84,5 +84,5 @@ const Book = props => {
     </div>
   );
 };
-
+/* *** *** EXPORT*** *** */
 export default Book;

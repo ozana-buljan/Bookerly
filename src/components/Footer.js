@@ -1,5 +1,6 @@
+/* *** *** IMPORT*** *** */
 import React from 'react';
-
+/* *** *** Footer Component *** *** */
 const Footer = ()=> (
     <footer>
         <section class="copyright">
@@ -11,5 +12,5 @@ const Footer = ()=> (
         </section>
     </footer>
 )
-
+/* *** *** EXPORT*** *** */
 export default Footer;
