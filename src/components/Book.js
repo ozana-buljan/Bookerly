@@ -39,6 +39,7 @@ const Book = props => {
       return "Unknown"
     }
   }
+
   return (
     <div className="book" id={id} key={id}>
       <div className="book-top">
