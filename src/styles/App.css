@@ -21,8 +21,9 @@ body,
 a {
     text-decoration: none;
 }
-a:hover{
-      background-color:  #ce4b4b;
+
+a:hover {
+    background-color: #ce4b4b;
 }
 
 
@@ -130,7 +131,7 @@ img {
     display: block;
     width: 50px;
     height: 50px;
-   background-image: url('../icons/add.svg');
+    background-image: url('../icons/add.svg');
     font-size: 0;
     z-index: 101;
 }
@@ -208,16 +209,18 @@ img {
     background-size: 20px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
 }
-select{
+
+select {
     height: 150px;
-    color:  #ce4b4b;
+    color: #ce4b4b;
     font-size: 16px;
     font-family: 'Special Elite', cursive;
 }
+
 option {
-color:  #ce4b4b;
-background-color: white;
-padding: 0.25em;
+    color: #ce4b4b;
+    background-color: white;
+    padding: 0.25em;
 }
 
 .book-shelf-changer select {
